@@ -66,24 +66,27 @@ namespace DesafioFundamentos.Models
         }
     }
 
-    private decimal CalcularValorTotal(int horas)
-    {
-        return precoInicial + (precoPorHora * horas);
-    }
-
-        public void ListarVeiculos()
+        private decimal CalcularValorTotal(int horas)
         {
-            // Verifica se há veículos no estacionamento
-            if (veiculos.Any())
+            return precoInicial + (precoPorHora * horas);
+        }
+
+        
+        public void ListarVeiculos()
+    {
+        if (veiculos.Any())
+        {
+            Console.WriteLine("Os veículos estacionados são:");
+
+            foreach (var placa in veiculos)
             {
-                Console.WriteLine("Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-                // *IMPLEMENTE AQUI*
-            }
-            else
-            {
-                Console.WriteLine("Não há veículos estacionados.");
+                Console.WriteLine(placa);
             }
         }
+        else
+        {
+            Console.WriteLine("Não há veículos estacionados.");
+        }
+    }
     }
 }
